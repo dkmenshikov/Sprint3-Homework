@@ -15,7 +15,11 @@ class ViewController: UIViewController {
         
     }
     
-    private var counterValue: Int = 0
+    private var counterValue: Int = 0 {
+        didSet {
+            counterLabel.text = "Значение счетчика: \(counterValue)"
+        }
+    }
     
     @IBOutlet weak var counterLabel: UILabel!
     
@@ -24,9 +28,26 @@ class ViewController: UIViewController {
     @IBAction func incButtonDidTap(_ sender: Any) {
         print("Нажатие +")
         counterValue += 1
-        counterLabel.text = "Значение счетчика: \(counterValue)"
     }
     
-
+    @IBOutlet weak var decButton: UIButton!
+    
+    @IBAction func decButtonDidTap(_ sender: Any) {
+        print("Нажатие -")
+        if counterValue != 0 {
+            counterValue -= 1
+        } else {
+            // тут написать вывод текста
+        }
+    }
+    
+    @IBOutlet weak var renewButton: UIButton!
+    
+    @IBAction func renewButtonDidTap(_ sender: Any) {
+        print("Нажатие сброс")
+        counterValue = 0
+    }
+    
+    
 }
 
