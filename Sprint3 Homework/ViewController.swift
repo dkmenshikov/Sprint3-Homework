@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     @IBAction func incButtonDidTap(_ sender: Any) {
         print("Нажатие +")
         counterValue += 1
+        printToLog("Значение изменено на +1\n")
     }
     
     @IBOutlet weak var decButton: UIButton!
@@ -36,8 +37,10 @@ class ViewController: UIViewController {
         print("Нажатие -")
         if counterValue != 0 {
             counterValue -= 1
+            printToLog("Значение изменено на -1\n")
         } else {
             // тут написать вывод текста
+            printToLog("Попытка уменьшения значения счетчика ниже 0\n")
         }
     }
     
@@ -46,8 +49,21 @@ class ViewController: UIViewController {
     @IBAction func renewButtonDidTap(_ sender: Any) {
         print("Нажатие сброс")
         counterValue = 0
+        printToLog("Значение сброшено\n")
     }
     
+    @IBOutlet weak var changesLog: UITextView!
+    
+    private func printToLog (_ message: String) {
+        changesLog.text.append(Date().dateTimeString)
+        changesLog.text.append(message)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        changesLog.isEditable = false
+    }
     
 }
 
