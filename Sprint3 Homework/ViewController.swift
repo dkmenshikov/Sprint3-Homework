@@ -8,12 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-    }
+    
+    @IBOutlet private weak var counterLabel: UILabel!
+    
+    @IBOutlet private weak var incrementButton: UIButton!
+    
+    @IBOutlet private weak var decrementButton: UIButton!
+    
+    @IBOutlet private weak var renewButton: UIButton!
+    
+    @IBOutlet private weak var logTextView: UITextView!
+    
     
     private var counterValue: Int = 0 {
         didSet {
@@ -21,49 +26,46 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var counterLabel: UILabel!
-    
-    @IBOutlet weak var incButton: UIButton!
-    
-    @IBAction func incButtonDidTap(_ sender: Any) {
-        print("Нажатие +")
-        counterValue += 1
-        printToLog("Значение изменено на +1\n")
-    }
-    
-    @IBOutlet weak var decButton: UIButton!
-    
-    @IBAction func decButtonDidTap(_ sender: Any) {
-        print("Нажатие -")
-        if counterValue != 0 {
-            counterValue -= 1
-            printToLog("Значение изменено на -1\n")
-        } else {
-            // тут написать вывод текста
-            printToLog("Попытка уменьшения значения счетчика ниже 0\n")
-        }
-    }
-    
-    @IBOutlet weak var renewButton: UIButton!
-    
-    @IBAction func renewButtonDidTap(_ sender: Any) {
-        print("Нажатие сброс")
-        counterValue = 0
-        printToLog("Значение сброшено\n")
-    }
-    
-    @IBOutlet weak var changesLog: UITextView!
-    
-    private func printToLog (_ message: String) {
-        changesLog.text.append(Date().dateTimeString)
-        changesLog.text.append(message)
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        changesLog.isEditable = false
+        logTextViewSetup()
     }
     
+    private func logTextViewSetup () {
+        logTextView.isEditable = false
+        logTextView.isSelectable = false
+        logTextView.text = "История изменений:\n"
+    }
+    
+    
+    private func printToLogTextView (_ message: String) {
+        logTextView.text.append(Date().dateTimeString)
+        logTextView.text.append(message)
+    }
+    
+    
+    @IBAction private func renewButtonDidTap(_ sender: Any) {
+        print("Нажатие сброс")
+        counterValue = 0
+        printToLogTextView("Значение сброшено\n")
+    }
+    
+    @IBAction private func decrementButtonDidTap(_ sender: Any) {
+        print("Нажатие -")
+        if counterValue != 0 {
+            counterValue -= 1
+            printToLogTextView("Значение изменено на -1\n")
+        } else {
+            printToLogTextView("Попытка уменьшения значения счетчика ниже 0\n")
+        }
+    }
+    
+    @IBAction private func incrementButtonDidTap(_ sender: Any) {
+        print("Нажатие +")
+        counterValue += 1
+        printToLogTextView("Значение изменено на +1\n")
+    }
 }
 
