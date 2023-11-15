@@ -16,13 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PT8-77-q6t" userLabel="Background">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PT8-77-q6t" userLabel="Background">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" text="История изменений:" translatesAutoresizingMaskIntoConstraints="NO" id="uCu-Be-w0z">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCu-Be-w0z">
                                         <rect key="frame" x="31" y="454" width="331" height="313"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
@@ -33,7 +32,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHB-FF-JMQ">
                                 <rect key="frame" x="164" y="156" width="65" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.93725490570000003" green="0.52156865600000002" blue="0.49019610879999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted">
@@ -42,12 +41,12 @@
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="incButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ohr-SF-pgM"/>
+                                    <action selector="incrementButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ohr-SF-pgM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a72-kF-XJ9" userLabel="Dec Button">
                                 <rect key="frame" x="164" y="293" width="65" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.66193104463906827" green="0.81023396192979191" blue="0.93542295694351196" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted">
@@ -56,12 +55,12 @@
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="decButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aql-M5-G97"/>
+                                    <action selector="decrementButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aql-M5-G97"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYl-Rl-XaW" userLabel="Renew Button">
                                 <rect key="frame" x="55" y="293" width="65" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted">
@@ -75,7 +74,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Значение счетчика: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9g5-yS-xZ2">
                                 <rect key="frame" x="28" y="237" width="336" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -83,12 +82,16 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PT8-77-q6t" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="1.12253" id="ACQ-Ld-CzK"/>
+                            <constraint firstItem="PT8-77-q6t" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="cAI-1L-eAl"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="changesLog" destination="uCu-Be-w0z" id="KhD-fT-d5b"/>
                         <outlet property="counterLabel" destination="9g5-yS-xZ2" id="lma-pn-vk2"/>
-                        <outlet property="decButton" destination="a72-kF-XJ9" id="Qty-aj-ONO"/>
-                        <outlet property="incButton" destination="xHB-FF-JMQ" id="elt-Vm-abv"/>
+                        <outlet property="decrementButton" destination="a72-kF-XJ9" id="Qty-aj-ONO"/>
+                        <outlet property="incrementButton" destination="xHB-FF-JMQ" id="elt-Vm-abv"/>
+                        <outlet property="logTextView" destination="uCu-Be-w0z" id="KhD-fT-d5b"/>
                         <outlet property="renewButton" destination="hYl-Rl-XaW" id="iJK-ln-90C"/>
                     </connections>
                 </viewController>
