@@ -10,13 +10,9 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet private weak var counterLabel: UILabel!
-    
     @IBOutlet private weak var incrementButton: UIButton!
-    
     @IBOutlet private weak var decrementButton: UIButton!
-    
     @IBOutlet private weak var renewButton: UIButton!
-    
     @IBOutlet private weak var logTextView: UITextView!
     
     
@@ -32,6 +28,7 @@ class ViewController: UIViewController {
         
         logTextViewSetup()
     }
+    
     
     private func logTextViewSetup () {
         logTextView.isEditable = false
