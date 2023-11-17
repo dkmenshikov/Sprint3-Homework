@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         }
     }
     
+    private var logTextViewContent: String = ""
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -38,8 +40,9 @@ class ViewController: UIViewController {
     
     
     private func printToLogTextView (_ message: String) {
-        logTextView.text.append(Date().dateTimeString)
-        logTextView.text.append(message)
+        
+        logTextViewContent = Date().dateTimeString + message.appending(logTextViewContent)
+        logTextView.text = ("История изменений:\n\n\(logTextViewContent)")
     }
     
     
